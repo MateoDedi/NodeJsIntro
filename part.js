@@ -1,3 +1,4 @@
+/*
 let pi = 3.14;
 
 let myObj = {
@@ -7,3 +8,4 @@ let myObj = {
 };
 
 module.exports = {pi, myObj};
+*/

@@ -1,6 +1,6 @@
 //      My Version
 
-import myArr from "./part.mjs";
+import myArr from "./MYpart.mjs";
 console.log('myArr =>', myArr);
 
 // we name the files .mjs
