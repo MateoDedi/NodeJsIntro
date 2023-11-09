@@ -5,3 +5,5 @@ let myObj = {
     number :    1,
     type : "salami"
 };
+
+module.exports = {pi, myObj};
