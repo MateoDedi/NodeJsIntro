@@ -4,10 +4,11 @@ const path = require('path');
 
 const fileOps = async () => {
     try {
-        const data = await fsPromises.readFile(path.join(__dirname, 'files', 'lorem.txt'), 'utf8');
-        console.log(data);
-        await fsPromises.writeFile(path.join(__dirname, 'files', 'promiseWrite.txt'), data);
-        await fsPromises.appendFile(path.join(__dirname, 'files', 'promiseWrite.txt'), '\n\nNice to meet you');
+        const data = await fsPromises.readFile(path.join(__dirname, 'files', 'lorem.txt'), 'utf8');         //read file
+        console.log(data); //logging in the data
+        await fsPromises.unlink(path.join(__dirname, 'files', 'lorem.txt'), data); //delete the original file
+        await fsPromises.writeFile(path.join(__dirname, 'files', 'promiseWrite.txt'), data); //create file
+        await fsPromises.appendFile(path.join(__dirname, 'files', 'promiseWrite.txt'), '\n\nNice to meet you'); //update file
         await fsPromises.rename(path.join(__dirname, 'files', 'promiseWrite.txt'), path.join(__dirname, 'files', 'promiseComplete.txt'));
         const newData = await fsPromises.readFile(path.join(__dirname, 'files', 'promiseComplete.txt'), 'utf8');
         console.log(newData);

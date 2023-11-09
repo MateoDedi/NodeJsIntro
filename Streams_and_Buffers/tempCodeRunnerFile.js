@@ -1,0 +1,1 @@
+await fsPromises.appendFile(path.join(__dirname, 'Streams_and_Buffers', 'newFile.txt'), `${write}`);
