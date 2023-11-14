@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MateoDedi/NodeJsIntro/issues"
   },
-  "homepage": "https://github.com/MateoDedi/NodeJsIntro#readme"
+  "homepage": "https://github.com/MateoDedi/NodeJsIntro#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
