@@ -3,6 +3,24 @@ const express = require("express");
 // The "express" function returns an object that contains many methods such as 'listen', 'get', 'post', 'use', etc.
 const app = express();
 
+// Middleware to log request details
+app.use((req, res, next) => {
+    const method = req.method;
+    const url = req.originalUrl;
+    
+    // Store the original res.send function
+    const originalSend = res.send;
+
+    // Override the res.send function to log the status code before sending the response
+    res.send = function (body) {
+        console.log(`${method} ${url} ${res.statusCode}`);
+        originalSend.apply(res, arguments);
+    };
+
+    // Call the next middleware in the stack
+    next();
+});
+
 // 'listen' establishes a port to be listened and a callback function that fires as soon as the server is launched.
 app.listen(3000, () => {
     console.log("Listening to port 3000");
